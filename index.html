@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitt's Digital Guides — Practical Planners & Guides for Real Life</title>
+<meta name="description" content="Downloadable PDF guides for budgeting, home organization, side hustle taxes, ADHD productivity, dog care, and spring gardening. Instant download. No fluff.">
+<meta property="og:title" content="Kitt's Digital Guides — Practical Planners & Guides for Real Life">
+<meta property="og:description" content="Six instant-download PDF guides covering money, home, productivity, pets, and gardening. Real advice. No filler.">
+<meta property="og:type" content="website">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --brand: #2D5016;
+    --brand-mid: #4A7C2F;
+    --brand-light: #7AB648;
+    --brand-pale: #E8F5D9;
+    --accent: #E8942A;
+    --accent-light: #FFF3E0;
+    --text: #1A1A1A;
+    --text-soft: #555;
+    --bg: #FAFAF5;
+    --white: #FFFFFF;
+    --border: #E5E7EB;
+    --radius: 14px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--brand);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-cta {
+    background: var(--brand);
+    color: white;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--brand-mid); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 60%, var(--brand-light) 100%);
+    color: white;
+    padding: 80px 24px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 60px;
+    background: var(--bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .hero h1 em { color: #C5E8A0; font-style: normal; }
+  .hero p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(232,148,42,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,148,42,0.5); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 48px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num { font-size: 28px; font-weight: 800; color: #C5E8A0; }
+  .hero-stat .lbl { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 70px 24px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brand-mid);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--brand);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-soft);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  /* ── BUNDLE BANNER ── */
+  .bundle-banner {
+    background: linear-gradient(130deg, var(--brand) 0%, #1a3409 100%);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  .bundle-banner .bb-left { flex: 1; min-width: 240px; }
+  .bundle-banner .bb-tag {
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 14px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .bundle-banner h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .bundle-banner p { color: rgba(255,255,255,0.8); font-size: 15px; }
+  .bundle-price {
+    text-align: center;
+    min-width: 160px;
+  }
+  .bundle-price .was {
+    text-decoration: line-through;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+  }
+  .bundle-price .now {
+    font-size: 44px;
+    font-weight: 800;
+    color: #C5E8A0;
+    line-height: 1;
+  }
+  .bundle-price .save {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .btn-bundle {
+    display: block;
+    background: var(--accent);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .btn-bundle:hover { transform: translateY(-2px); }
+
+  /* ── PRODUCT GRID ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+  }
+  .product-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.25s, transform 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+  .product-card-header {
+    padding: 28px 28px 20px;
+    flex: 1;
+  }
+  .product-icon { font-size: 42px; margin-bottom: 14px; display: block; }
+  .product-badge {
+    display: inline-block;
+    background: var(--brand-pale);
+    color: var(--brand);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+  .product-badge.seasonal { background: #FFF3E0; color: #C05C0A; }
+  .product-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    color: var(--brand);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .product-desc {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .product-features { list-style: none; margin-bottom: 0; }
+  .product-features li {
+    font-size: 13px;
+    color: var(--text-soft);
+    padding: 4px 0;
+    display: flex;
+    gap: 8px;
+  }
+  .product-features li::before { content: '✓'; color: var(--brand-light); font-weight: 700; }
+  .product-card-footer {
+    padding: 18px 28px;
+    border-top: 1px solid var(--border);
+    background: #FAFAF5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brand);
+  }
+  .btn-buy {
+    background: var(--brand);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-buy:hover { background: var(--brand-mid); }
+  .btn-buy.accent { background: var(--accent); }
+  .btn-buy.accent:hover { background: #c97d20; }
+
+  /* ── WHY US ── */
+  .why-section { background: white; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
+  }
+  .why-card {
+    background: var(--brand-pale);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .why-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .why-title { font-weight: 700; font-size: 16px; color: var(--brand); margin-bottom: 8px; }
+  .why-desc { font-size: 14px; color: var(--text-soft); line-height: 1.55; }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--brand-pale); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 20px;
+  }
+  .faq-item {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .faq-q { font-weight: 700; color: var(--brand); margin-bottom: 8px; font-size: 15px; }
+  .faq-a { font-size: 14px; color: var(--text-soft); line-height: 1.6; }
+
+  /* ── CTA FOOTER SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+    text-align: center;
+    padding: 70px 24px;
+    color: white;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+  .cta-section p { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+  }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media (max-width: 640px) {
+    .bundle-banner { flex-direction: column; text-align: center; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .hero-stat .num { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">🌱 Kitt's Digital Guides</a>
+    <a href="https://payhip.com/KittsDigitalGuides" class="nav-cta" target="_blank" rel="noopener">View All Guides →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Instant Download · No Subscriptions</div>
+  <h1>Practical guides for <em>real life</em><br>— not theory</h1>
+  <p>Downloadable PDF planners and guides for budgeting, home resets, side hustle taxes, productivity, pet care, and gardening. Buy once, use forever.</p>
+  <div class="hero-actions">
+    <a href="#products" class="btn-primary">Browse All Guides</a>
+    <a href="https://payhip.com/b/myZEt" class="btn-secondary" target="_blank" rel="noopener">Get the Bundle — $29.99</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">6</div>
+      <div class="lbl">Guides Available</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">100+</div>
+      <div class="lbl">Pages of Content</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">PDF</div>
+      <div class="lbl">Instant Download</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">$0</div>
+      <div class="lbl">Subscription Needed</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="section-label">The Collection</div>
+    <h2 class="section-title">Every Guide We Offer</h2>
+    <p class="section-sub">Six practical, no-fluff PDF guides covering the moments that actually matter in everyday life.</p>
+
+    <!-- Bundle Banner -->
+    <div class="bundle-banner">
+      <div class="bb-left">
+        <div class="bb-tag">🎁 Best Value</div>
+        <h2>Complete Life Reset Bundle</h2>
+        <p>All 6 guides in one download. Covers budgeting, taxes, home organization, productivity, pet care, and gardening. Everything you need for a fresh start.</p>
+      </div>
+      <div class="bundle-price">
+        <div class="was">$67.94 separately</div>
+        <div class="now">$29.99</div>
+        <div class="save">You save $37.95 (56% off)</div>
+        <a href="https://payhip.com/b/myZEt" class="btn-bundle" target="_blank" rel="noopener">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">🌱</span>
+          <span class="product-badge seasonal">🔥 In Season Now</span>
+          <h3 class="product-title">The Beginner's Spring Vegetable Garden Planner</h3>
+          <p class="product-desc">Plan, plant, and grow your first food garden — even with zero experience. Covers growing zones, 15 beginner crops, soil basics, and includes a garden plot planner and planting tracker.</p>
+          <ul class="product-features">
+            <li>USDA zone guide + planting calendar by zone</li>
+            <li>15 easiest spring vegetables with days-to-harvest</li>
+            <li>4×8 garden plot planner grid (fillable)</li>
+            <li>Planting tracker + harvest log</li>
+            <li>10 beginner mistakes to avoid</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$9.99</div>
+          <a href="https://payhip.com/b/cR8CO" class="btn-buy accent" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">💸</span>
+          <span class="product-badge seasonal">⏰ Tax Season</span>
+          <h3 class="product-title">The Side Hustler's First Tax Season Guide</h3>
+          <p class="product-desc">Self-employment taxes explained without an accounting degree. Track income, find deductions, and understand quarterly payments before April 15.</p>
+          <ul class="product-features">
+            <li>SE tax calculation explained step-by-step</li>
+            <li>25+ deductions most freelancers miss</li>
+            <li>Quarterly payment schedule and calculator</li>
+            <li>Income + expense tracker worksheet</li>
+            <li>Home office deduction guide</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$12.99</div>
+          <a href="https://payhip.com/b/AeldB" class="btn-buy" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">💰</span>
+          <span class="product-badge">Finance</span>
+          <h3 class="product-title">30-Day Budget Bootcamp Workbook</h3>
+          <p class="product-desc">A structured 30-day program to understand your money, stop the leaks, and build a budget that actually lasts. Daily exercises, weekly check-ins, and a full spending audit.</p>
+          <ul class="product-features">
+            <li>30 days of guided money exercises</li>
+            <li>Full spending audit worksheet</li>
+            <li>Income, expenses, and goals tracker</li>
+            <li>Debt payoff and savings planner</li>
+            <li>Weekly reflection prompts</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$12.99</div>
+          <a href="https://payhip.com/b/32Lra" class="btn-buy" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">🧠</span>
+          <span class="product-badge">Productivity</span>
+          <h3 class="product-title">ADHD-Friendly Daily Life Planner</h3>
+          <p class="product-desc">An undated daily planner built around how ADHD brains actually work — not how planners assume they should. No guilt, no shame, no 90-minute planning sessions.</p>
+          <ul class="product-features">
+            <li>Undated — start any day, any time</li>
+            <li>Micro-task and priority capture system</li>
+            <li>Energy level + focus tracker</li>
+            <li>Brain dump and reset pages</li>
+            <li>Habit tracker with flexible streaks</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$14.99</div>
+          <a href="https://payhip.com/b/UVbxW" class="btn-buy" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">🏠</span>
+          <span class="product-badge seasonal">🌸 Spring</span>
+          <h3 class="product-title">The Complete Spring Clean & Home Reset Playbook</h3>
+          <p class="product-desc">A room-by-room system for decluttering, deep-cleaning, and reorganizing your home this spring. Includes a 4-week action plan and donation tracker.</p>
+          <ul class="product-features">
+            <li>Room-by-room declutter checklists</li>
+            <li>4-week spring cleaning action plan</li>
+            <li>Donation, sell, and trash sorting system</li>
+            <li>Deep clean task list by area</li>
+            <li>Home maintenance reminder schedule</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$7.99</div>
+          <a href="https://payhip.com/b/LGsxm" class="btn-buy" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <span class="product-icon">🐶</span>
+          <span class="product-badge">Pet Care</span>
+          <h3 class="product-title">The New Dog Owner's Complete Handbook</h3>
+          <p class="product-desc">Everything first-time dog owners wish someone had told them — from choosing a breed to the first vet visit, crate training basics, and what to expect in the first 90 days.</p>
+          <ul class="product-features">
+            <li>First 48-hour homecoming checklist</li>
+            <li>Breed selection guide by lifestyle</li>
+            <li>Vaccination and vet visit schedule</li>
+            <li>Crate training step-by-step</li>
+            <li>90-day new dog tracker</li>
+          </ul>
+        </div>
+        <div class="product-card-footer">
+          <div class="product-price">$9.99</div>
+          <a href="https://payhip.com/b/97Lgk" class="btn-buy" target="_blank" rel="noopener">Buy Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section">
+  <div class="section-inner">
+    <div class="section-label">Why Kitt's Guides</div>
+    <h2 class="section-title">Built for people who are busy,<br>not just reading</h2>
+    <p class="section-sub" style="margin-bottom: 36px;">These guides exist because most information is either too vague to act on or buried in 45-minute YouTube videos.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <div class="why-title">Instant Download</div>
+        <div class="why-desc">Buy and get your PDF in seconds. No waiting, no shipping, no account required after purchase.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🎯</span>
+        <div class="why-title">No Filler Content</div>
+        <div class="why-desc">Every page earns its place. We cut the padded intros and backstory that make most ebooks a chore to finish.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📋</span>
+        <div class="why-title">Actionable Worksheets</div>
+        <div class="why-desc">Every guide includes printable worksheets, trackers, and checklists — not just advice you read and forget.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">♾️</span>
+        <div class="why-title">Yours Forever</div>
+        <div class="why-desc">Download once and keep it forever. Print it. Share it with your household. No DRM, no expiration.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="section-inner">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Things people ask before buying</h2>
+    <p class="section-sub">Straightforward answers.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">How do I get the guide after I buy?</div>
+        <div class="faq-a">Immediately. Payhip sends a download link to your email the second your payment clears. You can also download from your Payhip account anytime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What format are the guides in?</div>
+        <div class="faq-a">All guides are PDF files. They open on any device — phone, tablet, laptop, or desktop. Print-ready if you prefer paper.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I print them?</div>
+        <div class="faq-a">Yes. Print at home, at a library, or at a copy shop. The guides are designed for both screen reading and printing. Black & white printing works fine.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's in the bundle?</div>
+        <div class="faq-a">All 6 guides: Spring Vegetable Garden Planner, Side Hustler's Tax Guide, Budget Bootcamp Workbook, ADHD Daily Planner, Spring Clean Playbook, and the New Dog Owner's Handbook. One download link for everything.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a Payhip account to buy?</div>
+        <div class="faq-a">No. You can check out as a guest with just your email. Payhip handles all payments securely (Stripe or PayPal).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a refund policy?</div>
+        <div class="faq-a">If you're not happy with a purchase, contact us. Digital downloads can't be "returned," but we'll work something out if the guide doesn't deliver on its description.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="section-inner" style="max-width: 700px;">
+    <h2>Ready to get practical?</h2>
+    <p>Pick one guide or grab the full bundle. Either way, you'll have a plan by tonight.</p>
+    <div class="hero-actions">
+      <a href="https://payhip.com/b/myZEt" class="btn-primary" target="_blank" rel="noopener">Get the Bundle — $29.99</a>
+      <a href="#products" class="btn-secondary">Browse Individual Guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Kitt's Digital Guides · All guides sold via <a href="https://payhip.com/KittsDigitalGuides" target="_blank" rel="noopener">Payhip</a> · Instant PDF downloads</p>
+  <p style="margin-top: 8px;">Questions? Email: <a href="mailto:kitt.opdesk@gmail.com">kitt.opdesk@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
